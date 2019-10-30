@@ -1,1 +1,1 @@
-newItem
+[newItem, 0, 0] => newItem , -1 , 0 
