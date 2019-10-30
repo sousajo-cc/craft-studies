@@ -1,12 +1,17 @@
+package gildedrose;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class GildedRose {
 
-	private static List<Item> items = null;
+	public static List<Item> items = null;
 
-	/**
+    public GildedRose(List<Item> items) {
+        this.items = items;
+    }
+
+    /**
 	 * @param args
 	 */
 	public static void main(String[] args) {
