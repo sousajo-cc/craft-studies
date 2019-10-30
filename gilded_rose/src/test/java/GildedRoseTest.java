@@ -15,7 +15,7 @@ public class GildedRoseTest {
 													new String[] {"newItem", "Aged Brie",
 															"Backstage passes to a TAFKAL80ETC concert",
 															"Sulfuras, Hand of Ragnaros"},
-													new Integer[] {-1, 0, 11},
+													new Integer[] {-1, 0, 2, 6, 11},
 													new Integer[] {0, 1, 49, 50});
 	}
 
