@@ -9,17 +9,12 @@ import java.util.*;
 
 public class GildedRoseTest {
 
-	@Test 
+	@Test
 	public void update_quality_approval_test() {
-		String name = "newItem";
-		int sellin = 0;
-		int quality = 0;
-		String itemString = doUpdate(name, sellin, quality);
-		//Approvals.verify(itemString);
 		CombinationApprovals.verifyAllCombinations(this::doUpdate,
-													new String[] {name},
-													new Integer[] {sellin},
-													new Integer[] {quality});
+													new String[] {"newItem"},
+													new Integer[] {0},
+													new Integer[] {0});
 	}
 
 	private String doUpdate(String name, int sellin, int quality) {
