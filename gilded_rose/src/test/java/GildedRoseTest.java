@@ -1,11 +1,7 @@
 import gildedrose.GildedRose;
-import gildedrose.Item;
 import gildedrose.ItemUpdatable;
-import org.approvaltests.Approvals;
 import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.Test;
-
-import java.util.*;
 
 
 public class GildedRoseTest {
@@ -22,7 +18,7 @@ public class GildedRoseTest {
 
 	private String doUpdate(String name, int sellin, int quality) {
 		ItemUpdatable[] items = new ItemUpdatable[]{
-		new ItemUpdatable(name, sellin, quality)};
+				ItemUpdatable.createItemUpdatable(name, sellin, quality)};
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		return app.items[0].name + " , " +
