@@ -2,3 +2,4 @@
 
 ### list of katas :
 - Gilded Rose - (java)
+- Gilded Rose - (scala)
