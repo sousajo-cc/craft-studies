@@ -2,11 +2,10 @@ package com.gildedrose
 
 class GildedRose(val items: Array[Item]) {
 
-
   def updateQuality() {
     items.foreach { item =>
-      if (item.name.equals("Aged Brie")) {
-        {
+      item.name match {
+        case GildedRose.AGEDBRIE =>
           if (item.quality < 50) {
             item.quality = item.quality + 1
           }
@@ -16,43 +15,44 @@ class GildedRose(val items: Array[Item]) {
               item.quality = item.quality + 1
             }
           }
-        }
-      } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-        if (item.quality < 50) {
-          item.quality = item.quality + 1
-          if (item.sellIn < 11) {
-            if (item.quality < 50) {
-              item.quality = item.quality + 1
+        case GildedRose.BACKSTAGE =>
+          if (item.quality < 50) {
+            item.quality = item.quality + 1
+            if (item.sellIn < 11) {
+              if (item.quality < 50) {
+                item.quality = item.quality + 1
+              }
+            }
+            if (item.sellIn < 6) {
+              if (item.quality < 50) {
+                item.quality = item.quality + 1
+              }
             }
           }
-          if (item.sellIn < 6) {
-            if (item.quality < 50) {
-              item.quality = item.quality + 1
-            }
+          item.sellIn = item.sellIn - 1
+          if (item.sellIn < 0) {
+            item.quality = item.quality - item.quality
           }
-        }
-        item.sellIn = item.sellIn - 1
-        if (item.sellIn < 0) {
-          item.quality = item.quality - item.quality
-        }
-      }
-      else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-
-      }
-      else {
-        if (item.quality > 0) {
-          item.quality = item.quality - 1
-        }
-
-        item.sellIn = item.sellIn - 1
-
-        if (item.sellIn < 0) {
+        case GildedRose.SULFURAS =>
+        case _ =>
           if (item.quality > 0) {
             item.quality = item.quality - 1
           }
-        }
+
+          item.sellIn = item.sellIn - 1
+
+          if (item.sellIn < 0) {
+            if (item.quality > 0) {
+              item.quality = item.quality - 1
+            }
+          }
       }
     }
   }
+}
 
+object GildedRose {
+  private val AGEDBRIE = "Aged Brie"
+  private val SULFURAS = "Sulfuras, Hand of Ragnaros"
+  private val BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert"
 }
