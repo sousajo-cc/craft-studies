@@ -39,7 +39,6 @@ class GildedRoseTest extends FlatSpec with Matchers {
     app.updateQuality()
     (app.items(0).quality) should equal(0)
   }
-
   //AGED BRIE
    "Aged Brie" should "increase Quality as time passes" in {
     var items = Array[Item](new Item("Aged Brie", 4, 6))
